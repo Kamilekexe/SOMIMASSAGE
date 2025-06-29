@@ -6,6 +6,7 @@
   <title>SOMIMASSAGE</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6fa0b.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
@@ -17,33 +18,35 @@
     header {
       text-align: center;
       padding: 40px 20px;
+      background-color: #ffffff;
     }
     header img {
-      max-width: 300px;
+      max-width: 280px;
     }
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
+      background-color: #e0f2f1;
     }
     .hero h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin-bottom: 10px;
     }
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.4em;
       color: #555;
     }
     .product-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       background-color: #fff;
     }
     .product-section img {
       max-width: 90%;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
     .product-description {
       max-width: 800px;
@@ -51,29 +54,67 @@
       text-align: center;
     }
     .price {
-      font-size: 2em;
+      font-size: 2.2em;
       margin: 20px 0;
       color: #00796b;
     }
     .buy-button {
-      padding: 15px 30px;
-      font-size: 1.2em;
+      padding: 15px 40px;
+      font-size: 1.3em;
       background-color: #00796b;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
     .buy-button:hover {
       background-color: #004d40;
+      transform: scale(1.05);
+    }
+    .features {
+      background: #f1f8f7;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .feature {
+      width: 220px;
+      margin: 20px;
+      animation: pop 1.2s ease forwards;
+    }
+    .feature i {
+      font-size: 48px;
+      color: #00796b;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+    .feature h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 0.95em;
+      color: #666;
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       background-color: #00796b;
       color: white;
-      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes pop {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -84,20 +125,43 @@
 
   <section class="hero" data-aos="fade-up">
     <h1>Masażer EMS SOMIMASSAGE</h1>
-    <p>8 trybów relaksu. Mini rozmiar, maksymalne odprężenie.</p>
+    <p>Profesjonalny relaks. Kompaktowa forma. Maksymalna ulga.</p>
   </section>
 
   <section class="product-section" data-aos="zoom-in">
-    <img src="Masazer.jpg" alt="Masażer Neck EMS">
+    <img src="Masazer.jpg" alt="Masażer EMS">
     <div class="product-description">
-      <p>Masażer szyi Mini elektryczny EMS to nowoczesne urządzenie do relaksu i regeneracji mięśni. Posiada 8 trybów masażu, które pomagają zmniejszyć zmęczenie, rozluźnić napięcie oraz poprawić samopoczucie. Kompaktowy i lekki – idealny w domu, pracy i podróży!</p>
+      <p>Masażer szyi Mini elektryczny EMS to zaawansowane technologicznie urządzenie do redukcji napięcia i stresu. Zastosowanie impulsów EMS zapewnia głęboki masaż mięśni, poprawiając krążenie i komfort codzienny.</p>
       <p class="price">Cena: 49,99 zł</p>
       <button class="buy-button">Kup przez PayPal</button>
     </div>
   </section>
 
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-heartbeat"></i>
+      <h3>8 Trybów Masażu</h3>
+      <p>Dopasuj poziom i intensywność masażu do swoich potrzeb.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-bolt"></i>
+      <h3>Technologia EMS</h3>
+      <p>Stymuluje mięśnie i poprawia krążenie bez bólu.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-mobile-alt"></i>
+      <h3>Kompaktowy Design</h3>
+      <p>Bezproblemowy w podróży, pracy i w domu.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-user-shield"></i>
+      <h3>Bezpieczne Użytkowanie</h3>
+      <p>Wykonany z certyfikowanych materiałów medycznych.</p>
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 SOMIMASSAGE. Wszelkie prawa zastrzeżone.
+    &copy; 2025 SOMIMASSAGE. Wszystkie prawa zastrzeżone.
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
