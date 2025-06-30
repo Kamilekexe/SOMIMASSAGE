@@ -4,183 +4,152 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SOMIMASSAGE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --main-color: #14b8a6;
-      --hover-color: #0d9488;
-    }
-
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to bottom, #ffffff, #f1f1f1);
-      color: #333;
+      padding: 0;
     }
-
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      color: #333;
+      overflow-x: hidden;
+    }
     header {
-      background-color: #fff;
-      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
     .logo {
-      max-height: 80px;
-      animation: fadeIn 2s ease-in-out;
+      height: 60px;
     }
-
-    .lang-switch {
-      font-size: 1rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--main-color);
+    .lang-switch button {
       margin-left: 10px;
+      background: none;
+      border: 2px solid #00bfa5;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      animation: fadeUp 1.5s ease-in-out;
+    .lang-switch button:hover {
+      background-color: #00bfa5;
+      color: #fff;
     }
-
-    .product-image {
+    main {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-image {
       width: 100%;
       max-width: 500px;
-      display: block;
-      margin: 0 auto 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      animation: float 3s ease-in-out infinite;
     }
-
-    .product-image:hover {
-      transform: scale(1.05);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
-
     h1 {
-      text-align: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
-
-    .description {
-      font-size: 1.1rem;
+    p.description {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
       line-height: 1.6;
-      text-align: center;
-      margin-bottom: 30px;
     }
-
     .features {
       display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 50px;
     }
-
     .feature {
-      width: 180px;
-      text-align: center;
-      margin: 15px;
-      animation: popIn 1.2s ease forwards;
-      opacity: 0;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 220px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1s ease both;
     }
-
-    .feature:nth-child(1) { animation-delay: 0.2s; }
-    .feature:nth-child(2) { animation-delay: 0.4s; }
-    .feature:nth-child(3) { animation-delay: 0.6s; }
-
-    .feature-icon {
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+    .feature i {
       font-size: 40px;
-      color: var(--main-color);
+      color: #00bfa5;
       margin-bottom: 10px;
     }
-
-    .buy-button {
-      display: block;
-      margin: 30px auto;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      background: var(--main-color);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      text-decoration: none;
-      text-align: center;
-      width: fit-content;
-    }
-
-    .buy-button:hover {
-      background: var(--hover-color);
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes fadeUp {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes popIn {
-      0% {opacity: 0; transform: scale(0.8);}
-      100% {opacity: 1; transform: scale(1);}
-    }
-
-    @media (max-width: 600px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+    .buy-button {
+      display: inline-block;
+      background-color: #00bfa5;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      animation: fadeInUp 1s ease both 0.5s;
+    }
+    .buy-button:hover {
+      background-color: #009688;
+    }
   </style>
-
-  <!-- Ikony (np. Font Awesome) -->
-  <script src="https://kit.fontawesome.com/3b3c3b3c3b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
   <header>
     <img src="nazwa.jpg" alt="Logo SOMIMASSAGE" class="logo" />
-    <div>
-      <button class="lang-switch" onclick="setLang('pl')">PL</button>
-      <button class="lang-switch" onclick="setLang('en')">EN</button>
+    <div class="lang-switch">
+      <button onclick="setLang('pl')">PL</button>
+      <button onclick="setLang('en')">EN</button>
     </div>
   </header>
-
-  <main class="container">
-    <img src="Masażer.jpg" alt="Masażer EMS" class="product-image" />
-
+  <main>
+    <img src="Masażer.jpg" alt="Masażer EMS" class="hero-image">
     <h1 id="title">Masażer szyi EMS – SOMIMASSAGE</h1>
-
     <p class="description" id="desc">
       Poznaj rewolucyjny <strong>mini masażer EMS</strong>! 8 trybów relaksu, redukcja napięcia i zmęczenia mięśni. Idealny do biura i domu.
     </p>
-
     <section class="features">
       <div class="feature">
-        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-        <div id="feat1">8 Trybów EMS</div>
+        <i class="fas fa-bolt"></i>
+        <p id="feat1">8 Trybów EMS</p>
       </div>
       <div class="feature">
-        <div class="feature-icon"><i class="fas fa-spa"></i></div>
-        <div id="feat2">Relaks i ulga</div>
+        <i class="fas fa-spa"></i>
+        <p id="feat2">Relaks i ulga</p>
       </div>
       <div class="feature">
-        <div class="feature-icon"><i class="fas fa-wifi"></i></div>
-        <div id="feat3">Bezprzewodowy</div>
+        <i class="fas fa-wifi"></i>
+        <p id="feat3">Bezprzewodowy</p>
       </div>
     </section>
-
     <a class="buy-button" href="https://paypal.me/Somimassage" target="_blank" id="buybtn">
       Kup teraz przez PayPal – 69,99 zł
     </a>
@@ -215,6 +184,5 @@
       document.getElementById('buybtn').innerText = translations[lang].buy;
     }
   </script>
-
 </body>
 </html>
